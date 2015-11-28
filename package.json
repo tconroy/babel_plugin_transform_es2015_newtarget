@@ -1,0 +1,17 @@
+{
+  "name": "babel-plugin-transform-es2015-newtarget",
+  "version": "0.0.0",
+  "description": "Transpiles ``new.target`` into ES5 valid code",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Vladimir Barbarosh <vladimir.barbarosh@gmail.com> (http://github.com/vbarbarosh)",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.2.1",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-stage-1": "^6.1.18",
+    "underscore": "^1.8.3"
+  }
+}

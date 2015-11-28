@@ -1,0 +1,37 @@
+'use strict';
+
+var _ = require('underscore');
+
+class Model
+{
+    constructor(value) {
+        this._value = value;
+    }
+
+    get value() {
+        return this._value;
+    }
+
+    toJSON() {
+        return this.value;
+    }
+}
+
+class ObjectModel extends Model
+{
+    static properties = {};
+
+    constructor(value) {
+        super(_.extend({}, new.target.properties, _.pick(value, _.keys(new.target.properties))));
+    }
+}
+
+class PostModel extends ObjectModel
+{
+    static properties = {
+        title: 'Hello'
+        /* content: '<p>Lorem ipsum dolor sit amet</p>' */
+    };
+}
+
+new PostModel({title: 'Nice day', aa: 11, bb: 22}).toJSON();
